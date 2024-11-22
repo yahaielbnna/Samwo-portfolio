@@ -6,16 +6,25 @@
     --sec-color: #101012;
     --dark-txt-color: #7E7E7F;
 }
+
+button.prim-btn{
+    background: -webkit-linear-gradient(right bottom, #a0782e, #89531d);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+}
 /*  */
 body{
     /* font-family: 'Courier New', Courier, monospace; */
-    font-family: Arial, Helvetica, sans-serif;
+    /* font-family: Arial, Helvetica, sans-serif; */
+    font-family: system-ui;
     background: var(--main-color);
 }
 
 header,nav{
     background-color: var(--sec-color);
-    padding: 5px 5%;
+    padding: 5px 10%;
 }
 header ul.social-links{
     list-style: none;
@@ -65,10 +74,65 @@ nav ul li a{
 nav ul li a.active,nav ul li a:hover{
     color: inherit;
 }
-nav button{
-    background: -webkit-linear-gradient(right bottom, #a0782e, #89531d);
-    border: none;
-    padding: 10px 20px;
-    border-radius: 20px;
-    cursor: pointer;
+/*  */
+.slide-hero{
+    width: 100%;
+    height: 80vh;
+    overflow: hidden;
+    padding: 0 10%;
+    position: relative;
+}
+
+.slide-hero .content{
+    position: absolute;
+    height: 70%;
+    top: 100%;
+    transform: translateY(-100%);
+    padding: 0 5%;
+}
+.slide-hero .content::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 90%;
+    height: 80%;
+    background: radial-gradient(farthest-side at 0% 100%,var(--main-color) 50%,#161619 130%);
+    z-index: -1;
+}
+.slide-hero .content .text{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    /* gap: 20px; */
+}
+.slide-hero .content .text h3{
+    font-size: 5rem;
+    font-weight: lighter;
+}
+.slide-hero .content .text h2{
+    font-size: 4.5rem;
+    font-weight: bold;
+    background: -webkit-linear-gradient(right bottom, #EEB850, #89531d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 40px;
+}
+.slide-hero .content .text p{
+    color: var(--dark-txt-color);
+    margin-bottom: 50px;
+}
+.slide-hero .content .text button{
+    width: fit-content;
+}
+.slide-hero .content .img{
+    width: 50%;
+    position: relative;
+}
+.slide-hero .content .img img{
+    /* filter: grayscale(70%); */
+    width: 85%;
+    position: absolute;
+    bottom: 0;
 }
